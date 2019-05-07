@@ -1,0 +1,116 @@
+/* pages/write-Letter/write-Letter.wxss */
+
+page {
+  background-color: #f3f3f3;
+}
+
+.content {
+  position: fixed;
+  padding-top: 200rpx;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+/* 添加图片 */
+
+.add-image {
+  width: 90rpx;
+  height: 90rpx;
+  /* 设置阴影 */
+  background-color: #fff;
+  border-radius: 50%;
+  border-style: solid;
+  box-shadow: 1px 1px 2px 2px #999;
+  border-width: 0rpx;
+  position: absolute;
+  left: 190rpx;
+  bottom: 25rpx;
+}
+
+.add-image .btn-img1 {
+  width: 50rpx;
+  height: 50rpx;
+  /* 实现居中 */
+  margin: auto;
+  position: absolute;
+  left: 20rpx;
+  bottom: 20rpx;
+}
+
+.add_icon {
+  width: 100rpx;
+  height: 80rpx;
+  /* margin-top: 20rpx; */
+}
+
+.picture_item {
+  width:25%;
+  height: 160rpx;
+  display: inline-block;
+  /* margin-left: 20rpx; */
+  justify-content: space-around;
+}
+
+.picture_item image {
+  width: 160rpx;
+  height:160rpx;
+  float: left;
+   justify-content: space-around;
+  /* height: 160rpx; */
+   
+}
+
+.picture_item .delete {
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+  margin-left: -40rpx;
+  /* position: absolute;
+  z-index: 2; */
+}
+
+.submit {
+  width: 90rpx;
+  height: 90rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px 2px #999;
+  border-width: 0rpx;
+  margin: auto;
+  position: absolute;
+  /* left: 20rpx; */
+  right: 190rpx;
+  bottom: 25rpx;
+}
+
+.submit .btn-img2 {
+  width: 50rpx;
+  height: 50rpx;
+  margin: auto;
+  position: absolute;
+  /* left: 20rpx; */
+  right: 20rpx;
+  bottom: 20rpx;
+}
+
+/* 文本输入 */
+
+.writeLetter {
+  position: absolute;
+  top: 80px;
+  left: 80rpx;
+  /* bottom: 200rpx; */
+}
+
+.placeholder {
+  font-size: 30rpx;
+}
+
+.currentWordNumber {
+  font-size: 24rpx;
+  color: #999;
+  position: absolute;
+  top: 40px;
+  left: 50rpx;
+}

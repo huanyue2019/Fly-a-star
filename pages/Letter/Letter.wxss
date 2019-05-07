@@ -1,0 +1,57 @@
+/* pages/Letter/Letter.wxss */
+
+.Title {
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  margin-bottom: 15rpx;
+  font-size: 52rpx;
+  font-weight: 400;
+}
+
+.LetterOne {
+  margin-left: 30rpx;
+  margin-top: 80px;
+  margin-bottom: 20rpx;
+  font-size: 36rpx;
+}
+
+.divLine {
+  background: rgb(201, 202, 199);
+  width: 100%;
+  height: 3rpx;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.StarDelivery {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  box-sizing: border-box;
+}
+
+
+.btn-Letter{
+  border: 1px solid green;
+  background-color: #73b69b;
+  width: 150rpx;
+  height: 75rpx;
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text-Letter{
+  font-family: MicroSoft Yahei;
+  font-size: 32rpx;
+  font-weight: 400;
+  line-height: 100rpx;
+}
+.Deliver{
+  margin-top: 80px;
+  margin-left: 70%;
+  margin-bottom: 0px;
+}
+

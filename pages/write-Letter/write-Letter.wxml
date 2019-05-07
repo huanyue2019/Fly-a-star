@@ -1,0 +1,30 @@
+<form bindsubmit='submit'>
+<view class='Letter'>
+  <view class='Letter-writeIcon'>
+    <!-- 本地选择图片添加 -->
+    <scroll-view class="scroll-view_H" scroll-X="{{true}}">
+      <view wx:for="{{upload_picture_list}}" class="picture_item">
+        <image wx:if="{{item.upload_percent < 100}}" src="{{item.path}}"></image>
+        <image wx:if="{{item.upload_percent == 100}}" src="{{item.path_server}}"></image>
+        <!-- 删除icon -->
+        <image class='delete' src='/images/icon/delete.png' bindtap='deleteImg'></image>
+      </view>
+    </scroll-view>
+    <!-- 输入目标内容 -->
+    <view class='content'>
+      <text class="currentWordNumber">{{currentNoteLen|0}}/{{noteMaxLen}}</text>
+      <view class='writeLetter'>
+        <textarea bindinput='input' rows="3" auto-height placeholder="输入你的小目标吧......" placeholder-class='placeholder' maxlength="5000" hidden='{{dleg3}}'>
+        </textarea>
+      </view>
+    </view>
+    <!-- 添加图片点击事件 -->
+    <view class="add-image" bindtap='uploadpic'>
+      <image class='btn-img1' src='/images/icon/btn_image.png'></image>
+    </view>
+    <view class='submit'>
+       <button form-type="submit"> <image class='btn-img2' src='/images/icon/send.png' bindtap='submit'>提交</image></button>
+    </view>
+  </view>
+</view>
+</form>

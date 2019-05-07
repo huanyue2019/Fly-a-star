@@ -1,0 +1,72 @@
+<view class='main'>
+ <view class='when'>
+  <form bindsubmit='formSubmit'>
+  <button formType='submit' id='save'>保存</button>
+   <!-- 选择时间段 -->
+   <view class="selectTime">
+     <text>时段：</text>
+     <view class="section">
+      <picker mode="time" value="{{time}}" start="09:00" end="21:00" bindchange="bindTimeChange" id='startTime'>
+      <!-- 在js中判断所选picker的id为startTime时，将value赋值给startTime，放在input内 -->
+       <view class="picker">
+         <input placeholder='开始时间' value='{{startTime}}' name="startTime"></input>
+       </view>
+      </picker>
+     </view>
+     <text>至</text>
+    <view class="section">
+      <picker mode="time" value="{{time}}" start="09:00" end="21:00" bindchange="bindTimeChange" id='endTime'>
+      <!-- 在js中判断所选picker的id为endTime时，将value赋值给endTime，放在input内 -->
+       
+       <view class="picker">
+         <input placeholder='结束时间' value='{{endTime}}' name="endTime"></input>
+       </view>
+      </picker>
+     </view>
+   </view>
+  
+   <!-- 选择星期 -->
+   <view class='selectDay'>
+    <checkbox-group bindchange="checkboxChange" name="checkbox">
+      重复：
+      <!--写一个class选择后的背景色，在js中处理对应布尔值，在class中用三元式判断布尔并加背景色 -->
+      <label class="checkbox {{selected.monday?'selectedColor':''}}" for='monday'>
+      一
+       <checkbox value="monday" id='monday' hidden/>
+      </label>
+  
+      <label class="checkbox {{selected.tuesday?'selectedColor':''}}" for='tuesday'>
+      二
+       <checkbox value="tuesday" id='tuesday' hidden/>
+      </label>
+  
+      <label class="checkbox {{selected.wednesday?'selectedColor':''}}" for='wednesday'>
+      三
+       <checkbox value="wednesday" id='wednesday' hidden/>
+      </label>
+  
+      <label class="checkbox {{selected.thursday?'selectedColor':''}}" for='thursday'>
+      四
+       <checkbox value="thursday" id='thursday' hidden/>
+      </label>
+  
+      <label class="checkbox {{selected.friday?'selectedColor':''}}" for='friday'>
+      五
+       <checkbox value="friday" id='friday' hidden/>
+      </label>
+  
+      <label class="checkbox {{selected.saturday?'selectedColor':''}}" for='saturday'>
+     六
+       <checkbox value="saturday" id='saturday' hidden/>
+      </label>
+  
+      <label class="checkbox {{selected.sunday?'selectedColor':''}}" for='sunday'>
+     七
+       <checkbox value="sunday" id='sunday' hidden/>
+      </label>
+  
+    </checkbox-group>
+   </view>
+  </form>
+ </view>
+</view>

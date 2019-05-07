@@ -1,0 +1,11 @@
+<!--pages/personal/MyAlbum/MyAlbum.wxml-->
+<view class='container'>
+  <block wx:for="{{DateAlbum}}">
+    <view class='date'>{{item.date}}</view>
+    <view class='picture'>
+      <block wx:for="{{item.imgUrls}}">
+        <image src="{{item}}" />
+      </block>
+    </view>
+  </block>
+</view>

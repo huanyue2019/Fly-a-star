@@ -1,0 +1,30 @@
+<!--pages/Letter/Letter.wxml-->
+ <form bindsubmit='onTap'> 
+  <view class='Title'>开始给星星写一封信</view>
+  <view class='LetterOne'>
+    <view style='font-size:38rpx;margin-bottom:20px;color:#666'>标题</view>
+    <input style='font-size:42rpx;margin-bottom:10px;color:#333' placeholder='请在这里输入标题'
+    name='starTitle'></input>
+  </view>
+
+  <view class="divLine"></view>
+
+  <view class='LetterOne'>
+    <view style='font-size:38rpx;margin-bottom:5px;color:#666'>放星</view>
+    <view style='font-size:28rpx;margin-bottom:20px;color:#73B69B'>在这里，可以把信放在星星里面写给未来的自己哦~给未来的一封信，将梦想放在星星里，以流星许愿期待未来。</view>
+    <view>
+      <picker mode="date" bindchange='dateChange'>
+        <view style='font-size:42rpx;margin-bottom:10px;color:#333' name='starTime'>时间选择:{{date}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="divLine"></view>
+
+  <view class='Deliver'>
+    <view class='btn-Letter' bindtap='onTap'>
+     <button form-type='onTap'>写信<text class='text-Letter' ></text></button>
+      <!-- <text class='text-Letter' bindtap='onTap' form-type='button' >写信</text> -->
+    </view>
+  </view>
+ </form> 

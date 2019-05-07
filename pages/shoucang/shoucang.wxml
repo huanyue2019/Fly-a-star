@@ -1,0 +1,21 @@
+<view class='container'>
+  <!--  搜索框  -->
+  <view class='search'>
+    <input type='text' placeholder='输入你想查找的内容' confirm-type='search' value="{{inputValue}}" bindinput='inputBind' bindconfirm='query'></input>
+    <image src='/images/icon/ic_search.png' bindtap='query'></image>
+  </view>
+
+  <block wx:for="{{shoucang_card}}">
+    <view class='shoucang_box'>
+      <view class='acticle'>
+        <image class='content_image' src='{{item.content_image}}'></image>
+        <span class="shoucang_title">{{item.title}}</span>
+      </view>
+      <view class='author'>
+        <span>{{item.authorName}}</span>
+        <span style="margin-left:15rpx;font-size:26rpx;">{{item.date}}</span>
+      </view>
+    </view>
+  </block>
+
+</view>

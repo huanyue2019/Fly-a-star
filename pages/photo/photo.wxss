@@ -1,0 +1,246 @@
+/* pages/photo/photo.wxss */
+
+.swiper-img {
+  width: 100%;
+  height: 400rpx;
+  margin-bottom: 20px;
+}
+
+.swiper-img image {
+  width: 100%;
+  height: 400rpx;
+}
+
+.Navigation-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  z-index: 500;
+  width: 100%;
+  height: 50px;
+  flex-direction: row;
+  text-align: center;
+  color: #a8a8a8;
+  font-size: 10rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+
+.navbar-item {
+  flex: 1;
+  padding: 6rpx 2px;
+}
+
+.Navigation-text {
+  color: #666;
+  font-size: 36rpx;
+  margin-top: 30rpx;
+}
+
+.navbar-item-active {
+  transition: all 0.1s;
+  border-bottom: 10rpx solid #fcc;
+  color: #494949;
+}
+
+.demo0415 {
+  height: 2000rpx;
+  width: 100%;
+  /* border:1px solid green; */
+}
+
+/* 首页推荐 */
+
+.card-box {
+  /* padding: 5px 3rpx 5px 20px; *//* 上内边距是 5px,右内边距是 3rpx,下内边距是 5px,左内边距是 10px */
+  padding: 5px 0px 0px 5px;
+  width: 50%;
+  height: 480rpx;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #fff;
+  box-sizing: border-box;
+  float: left;
+  /* 添加阴影 */
+  border-style: solid;
+  box-shadow: 0px 0px 5px 5px #f3f3f3;
+  border-width: 0rpx;
+}
+
+.dynamic-tupian {
+  width: 340rpx;
+  height: 240rpx;
+  display: flex;
+}
+
+.dynamic_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  margin-left: 30rpx;
+}
+
+.dynamic_title {
+  font-size: 26rpx;
+  color: #666;
+  font-weight: 400;
+  margin-bottom: 2px;
+  margin-top: 5px;
+  margin-left: 50rpx;
+}
+
+.discuss {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+
+.discuss-image {
+  height: 20px;
+  width: 20px;
+  margin-right: 8rpx;
+  margin-left: 40rpx;
+}
+
+.discuss-text {
+  margin-right: 15px;
+  color: #999;
+}
+
+.divLine {
+  background: rgb(201, 202, 199);
+  width: 100%;
+  height: 3rpx;
+  margin-top: 10rpx;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  z-index: 1000;
+}
+
+.userhead {
+  border-radius: 50%;
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 28rpx;
+  /* margin-top: 24rpx; */
+}
+
+.username {
+  /* vertical-align: middle; */
+  margin-top: 10rpx;
+  align-items: center;
+  font-size: 32rpx;
+  color: #999;
+  margin-left: 20rpx;
+  margin-right: 15rpx;
+}
+
+.userdate {
+  margin-top: 12rpx;
+  color: #999;
+  font-size: 26rpx;
+  vertical-align: center;
+}
+
+/* 上传图片 */
+
+.add-image {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.add_icon {
+  width: 100rpx;
+  height: 80rpx;
+  margin-top: 20rpx;
+}
+
+.picture_item {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.picture_item image {
+  width: 160rpx;
+  height: 160rpx;
+  position: absolute;
+  z-index: -1;
+}
+
+.picture_item .delete {
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  z-index: 2;
+}
+
+.scroll-view_H {
+  display: flex;
+  white-space: nowrap;
+}
+
+.scroll-view_H view {
+  border: 5rpx solid white;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 输入照片描述部分 */
+
+.divLine {
+  background: rgb(201, 202, 199);
+  width: 100%;
+  height: 3rpx;
+  margin-top: 20rpx;
+  margin-bottom: 10px;
+}
+
+.placeholder {
+  font-size: 30rpx;
+  
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.textContent textarea {
+  border: 10rpx solid #fcc;
+  flex-wrap: warp;
+  border-radius: 10px;
+  font-size: 36rpx;
+  width: 700rpx;
+  height: 420rpx;
+}
+
+/* 发布按钮 */
+
+.fabu {
+  background-color: green;
+  position: absolute;
+  width: 100%;
+  color: white;
+  bottom: 1100rpx;
+}
+.topImages{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.topImages image{
+    width: 340rpx;
+    height: 300rpx;
+}

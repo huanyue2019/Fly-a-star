@@ -1,0 +1,45 @@
+<!--pages/personal/ContactUs/ContactUs.wxml-->
+ <form bindsubmit='submit'>
+<view class='con'>
+  <view class='AboutTitle'>写点什么给我们</view>
+
+  <view class="divLine"></view>
+  
+  
+  <!-- <view class='textContent'>
+    <textarea maxlength="5000" name="fanKuiContent"></textarea>
+    <image class='btn-img2' src='/images/icon/send.png' bindtap='fankui'></image>
+  </view> -->
+  <view class='textContent'>
+    <textarea maxlength="5000" name="fanKuiContent"></textarea>
+    <button form-type='submit'><image class='btn-img2' src='/images/icon/send.png' bindtap='fankui'></image></button>
+  </view>
+ 
+
+  <view class="divLine"></view>
+  <view class='AboutUs'>
+    <view class='AboutTitle'>关于我们</view>
+    <view class='poetry'>
+      <view>如何让你遇见我</view>
+      <view>在我最美丽的时刻</view>
+      <view>阳光下慎重地开满了花</view>
+      <view>朵朵都是我前世的盼望</view>
+      <view>当你走近 请你细听</view>
+      <view>颤抖的叶是我等待的热情</view>
+    </view>
+    <view class='poetry'>
+      <view>这就是放星小程序</view>
+      <view>它很美很简单</view>
+      <view>可以承载你的梦想一起加油</view>
+      <view>我们希望你能喜欢</view>
+      <view>并与他人分享你的创造</view>
+    </view>
+  </view>
+  <view>
+      <view class='Developer'>
+          <image src='/images/post/classmate.jpg' class='developer'></image>
+          <span>缓缓未来开发团队</span>  
+      </view>
+  </view>
+</view>
+</form>

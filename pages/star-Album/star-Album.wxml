@@ -1,0 +1,22 @@
+<!--pages/star-Album/star-Album.wxml-->
+<view class='Album-container'>
+  <view class="divLine"></view>
+  <view class='add'>
+    <image class='addimages' src='/images/icon/addimages.png' bindtap='chooseImage'></image>
+    <image src='{{src}}' mode='widthFix' style='width:0px;height:0px;'></image>
+    <view class='add-text'>添加图片</view>
+  </view>
+  <view class='edge'></view>
+
+  <input class='AlbumTitle' placeholder='请输入文章标题' maxlength="40" bindinput="handleTitleInput"></input>
+  <view class="divLine"></view>
+  <view class='text-border'>
+    <textarea class='Text' placeholder='请为星相册添加内容'></textarea>
+  </view>
+
+
+  <view class='edges'></view>
+  <view class='btn-publish'>
+    <button class='publish'>发布照片</button>
+  </view>
+</view>

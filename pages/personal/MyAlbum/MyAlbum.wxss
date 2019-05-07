@@ -1,0 +1,27 @@
+/* pages/personal/MyAlbum/MyAlbum.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.date{
+  font-size: 30rpx;
+  font-weight: 400;
+  margin-left: 10rpx;
+  margin-top: 20rpx;
+}
+.picture {
+  width: 100%;
+  /* 让照片自动换行 */
+  display: flex;
+  flex-flow: row wrap;
+  /* justify-content: space-around; */
+  align-content: space-around;
+}
+
+.picture image {
+  width: 180rpx;
+  height: 180rpx;
+  margin-top: 15rpx;
+  margin-left: 6rpx;
+}

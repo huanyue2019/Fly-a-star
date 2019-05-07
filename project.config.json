@@ -1,0 +1,158 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.4",
+	"appid": "wxe2dba2b474eedc86",
+	"projectname": "%E6%94%BE%E6%98%9F%E6%88%91%E7%9A%84%E6%A2%A6",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 15,
+			"list": [
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "photo",
+					"pathName": "pages/photo/photo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "photo-detail",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "photo-detail",
+					"pathName": "pages/photo-detail/photo-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "photo-detail",
+					"pathName": "pages/photo/photo-detail/photo-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "personal",
+					"pathName": "pages/personal/personal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "shoucang",
+					"pathName": "pages/shoucang/shoucang",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "MyAlbum",
+					"pathName": "pages/personal/MyAlbum/MyAlbum",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "write-Letter",
+					"pathName": "pages/write-Letter/write-Letter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "starplan",
+					"pathName": "pages/starplan/starplan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "ContactUs",
+					"pathName": "pages/personal/ContactUs/ContactUs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "starplan",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "starplan",
+					"pathName": "pages/starplan/starplan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "shiyan",
+					"pathName": "pages/shiyan/试验",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "shiyan",
+					"pathName": "pages/shiyan/shiyan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "WxComment-master",
+					"pathName": "pages/WxComment-master/WxComment-master",
+					"scene": null
+				}
+			]
+		}
+	}
+}

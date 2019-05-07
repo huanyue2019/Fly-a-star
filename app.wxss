@@ -1,0 +1,7 @@
+/**app.wxss**/
+text{
+    font-family: 思源黑体;
+    font-size: 24rpx;
+    color: #fff;
+}
+
