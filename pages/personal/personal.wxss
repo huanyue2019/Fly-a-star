@@ -36,8 +36,9 @@ page {
 .userinfo-nickname {
   color: #333;
   font-weight: 580;
-  margin-top: 340rpx;
-  margin-left: 10rpx;
+  position: relative;
+  left: 182rpx;
+  top: -145rpx;
   font-size: 38rpx;
   height: 66rpx;
   width: 76rpx;

@@ -1,4 +1,5 @@
 // var photoData = require('../../../data/dynamic_data.js')
+
 var app = getApp();
 Page({
 
@@ -6,13 +7,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    newData: "test1",
+    newData: "",
+    ContentImage:"/images/post/classmate.jpg",
+    title:"",
+    userLook:"",
+    userDianzan:"",
   },
+  
   onBackTap: function(e) {
     // wx.redirectTo({
-    //   url: '../photo',
+    //   url: 'https://www.hukehuke.vip/addDay',
     // })
-
     var pages = getCurrentPages(); //获取当前页面
     var prePage = pages[pages.length - 2]; //获取上一页面
     prePage.setData({
@@ -22,5 +27,10 @@ Page({
     wx.navigateBack({ //返回上一页面
       delta: 1,
     })
-  }
+  },
+  pinlun: function (event) {
+    wx.navigateTo({
+      url: '/pages/photo/CommentText/CommentText',
+    })
+  },
 })

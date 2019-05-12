@@ -102,7 +102,10 @@ page {
   left: 80rpx;
   /* bottom: 200rpx; */
 }
-
+.buttonSubmit{
+  border-radius: 50%;
+  color: white;
+}
 .placeholder {
   font-size: 30rpx;
 }

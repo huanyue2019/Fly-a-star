@@ -1,49 +1,54 @@
 <!--pages/personal/personal.wxml-->
-<view>
-  <view class='partone'>
-    <view class='back'>
-      <image class='back_images' src='/images/post/beijing.jpg' style='height:500rpx;width:100%'></image>
-    </view>
-    <view class='name'>
-      <view class="userinfo">
+<form bindsubmit='shoucang'>
+  <view>
+    <view class='partone'>
+      <view class='back'>
+        <image class='back_images' src='/images/post/beijing.jpg' style='height:500rpx;width:100%'></image>
+      </view>
+      <view class='name'>
+        <!-- <view class="userinfo">
         <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
         <block wx:else>
           <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
           <text class="userinfo-nickname">{{userInfo.nickName}}</text>
         </block>
-      </view>
-      <view class='GeQian'>
-        <!-- <view style='font-size:28rpx;' bindtap='Signature'>点击编写个性签名</view> -->
-        <input class="weui-input" name="manager" placeholder='点击编写个性签名' bindinput="inputedit" data-obj="info" data-item="manager" value="{{info.manager}}" />
-        <image src='/images/icon/ic_edit2.png' bindinput="inputedit" class='input_icon'></image>
+      </view> -->
+        <view>
+          <image class="userinfo-avatar" src='{{userInfo.avatarUrl}}'></image>
+          <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+        </view>
+        <view class='GeQian'>
+          <!-- <view style='font-size:28rpx;' bindtap='Signature'>点击编写个性签名</view> -->
+          <input class="weui-input" name="manager" placeholder='点击编写个性签名' bindinput="inputedit" data-obj="info" data-item="manager" value="{{info.manager}}" />
+          <image src='/images/icon/ic_edit2.png' bindinput="inputedit" class='input_icon'></image>
+        </view>
       </view>
     </view>
-  </view>
 
-  <view class='con'>
-    <view class="divLine"></view>
-    <navigator url='../personal/MyTime/MyTime'>
+    <view class='con'>
+      <view class="divLine"></view>
+      <navigator url='../personal/MyTime/MyTime'>
+        <view class='persional-introduce'>
+          <image src='/images/icon/like.png' style='width:50rpx;height:50rpx;margin-top:8rpx;'></image>
+          <view style='margin-top:8rpx;margin-left:25rpx;font-size:36rpx;'>我的时光</view>
+        </view>
+      </navigator>
+
+      <view class="divLine"></view>
+
       <view class='persional-introduce'>
         <image src='/images/icon/like.png' style='width:50rpx;height:50rpx;margin-top:8rpx;'></image>
-        <view style='margin-top:8rpx;margin-left:25rpx;font-size:36rpx;'>我的时光</view>
+        <view style='margin-top:10rpx;margin-left:25rpx;font-size:36rpx;' bindtap='shoucang'>我的收藏</view>
       </view>
-    </navigator>
+      <view class="divLine"></view>
 
-    <view class="divLine"></view>
+      <view class='persional-introduce'>
+        <image src='/images/icon/like.png' style='width:50rpx;height:50rpx;margin-top:8rpx;'></image>
+        <view style='margin-top:10rpx;margin-left:25rpx;font-size:36rpx;' bindtap='album'>我的相册</view>
+      </view>
+      <view class="divLine"></view>
 
-    <view class='persional-introduce'>
-      <image src='/images/icon/like.png' style='width:50rpx;height:50rpx;margin-top:8rpx;'></image>
-      <view style='margin-top:10rpx;margin-left:25rpx;font-size:36rpx;' bindtap="shoucang">我的收藏</view>
-    </view>
-    <view class="divLine"></view>
-
-    <view class='persional-introduce'>
-      <image src='/images/icon/like.png' style='width:50rpx;height:50rpx;margin-top:8rpx;'></image>
-      <view style='margin-top:10rpx;margin-left:25rpx;font-size:36rpx;' bindtap='album'>我的相册</view>
-    </view>
-    <view class="divLine"></view>
-
-    <!-- <navigator url='../personal/progress/progress'>
+      <!-- <navigator url='../personal/progress/progress'>
     <view class='persional-introduce'>
       <image src='/images/icon/like.png' style='width:50rpx;height:50rpx;margin-top:8rpx;'></image>
       <view style='margin-top:10rpx;margin-left:25rpx;font-size:36rpx;'>目标进度</view>
@@ -51,12 +56,13 @@
   </navigator>
   <view class="divLine"></view> -->
 
-    <navigator url='../personal/ContactUs/ContactUs'>
-      <view class='persional-introduce'>
-        <image src='/images/icon/like.png' style='width:50rpx;height:50rpx;margin-top:8rpx;'></image>
-        <view style='margin-top:10rpx;margin-left:25rpx;font-size:36rpx;'>联系我们</view>
-      </view>
-    </navigator>
-    <view class="divLine"></view>
+      <navigator url='../personal/ContactUs/ContactUs'>
+        <view class='persional-introduce'>
+          <image src='/images/icon/like.png' style='width:50rpx;height:50rpx;margin-top:8rpx;'></image>
+          <view style='margin-top:10rpx;margin-left:25rpx;font-size:36rpx;'>联系我们</view>
+        </view>
+      </navigator>
+      <view class="divLine"></view>
+    </view>
   </view>
-</view>
+</form>

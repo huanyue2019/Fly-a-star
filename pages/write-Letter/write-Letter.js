@@ -1,4 +1,5 @@
 // pages/write-Letter/write-Letter.js
+var App = getApp();
 Page({
 
     /**
@@ -7,49 +8,17 @@ Page({
     data: {
       noteMaxLen: 5000, //详细地址的字数限制
       currentNoteLen: 0,
-
       list: '',
       upload_picture_list: []
 
       // img: [], //设置一个数组
     },
-    chooseImage: function(e) {
-      var that = this,
-       upload_picture_list = that.data.upload_picture_list;
-      if (upload_picture_list.length < 4) {
-        wx.chooseImage({
-          count: 1,
-          sizeType: ['compressed'],
-          sourceType: ['album', 'camera'],
-          success: function(res) {
-            var tempFilesSize = res.tempFiles[0].size; //获取图片的大小，单位B
-            if (tempFilesSize <= 2000000) { //图片小于或者等于2M时 可以执行获取图片
-              var tempFilePaths = res.tempFilePaths[0]; //获取图片
-              that.data.img.push(tempFilePaths); //添加到数组
-              that.setData({
-                img: that.data.img
-              })
-            } else { //图片大于2M，弹出一个提示框
-              wx.showToast({
-                title: '上传图片不能大于2M!', //标题
-                icon: 'none' //图标 none不使用图标
-              })
-            }
-          }
-        })
-      } else {
-        wx.showToast({
-          title: '上传图片不能大于3张!',
-          icon: 'none'
-        })
-      }
-    },
-    complete: function(res) {
-      var tempFilePaths = res.tempFilePaths
-      that.setData({
-        src: tempFilePaths[0]
-      })
-    },
+
+   onLoad:function(options){
+    console.log(options)
+    
+   },
+
     input(event) {
       var value = event.detail.value,
         len = parseInt(value.length);
@@ -59,21 +28,80 @@ Page({
       });
     },
     submit: function(event) {
+      console.log(event);
+      // wx.showModal({
+      //   title: '发送成功',
+      //   content: '',
+      // })
       wx.showToast({
-        title: '发送成功',
-        icon: 'success',
-        duration: 2000
+        title: '发送成功！',
+      })
+      var that = this;
+      wx.uploadFile({
+        url: 'https://www.hukehuke.vip/addStar',
+        filePath: that.data.upload_picture_list[0].path,
+        // filePath: that.data.upload_picture_list[0],
+        name: 'file',
+        formData: { 
+          "starUser_id": wx.getStorageSync('openid'),
+          "starTitle": event.detail.value.starTitle,
+          "starTime": event.detail.value.starTime,
+          "starContent": event.detail.value.starContent
+        },
+        header: {
+          'content-type': 'multipart/form-data',
+        },
       })
     },
     /**
      * 选择上传图片
      */
+    upimg: function() {
+      wx.chooseImage({
+        success: function(res) {
+          var data = {
+            // program_id: app.jtappid
+          }
+          var tempFilePaths = res.tempFilePaths //图片
+          wx.uploadFile({
+            url: '',
+            filePath: tempFilePaths[0],
+            name: 'add_image', //文件对应的参数名字(key)
+            formData: data, //其它的表单信息
+            success: function(res) {
+              // console.log(res);
+              // var tempFiles = res.tempFiles
+              var filepath = res.tempFilePaths
+              // var that = this;
+              // var _tempFilePaths = this.data._tempFilePaths;
+              tempFiles[i]['upload_percent'] = 0
+              tempFiles[i]['path_server'] = ''
+              upload_picture_list.push(tempFiles[i])
+              //显示
+              that.setData({
+                // upload_picture_list: upload_picture_list,
+                _tempFilePaths: _tempFilePaths,
+              })
+            },
+          })
+        },
+      })
+    },
     uploadpic: function(e) {
       var that = this //获取上下文
+      var count = 1
       var upload_picture_list = that.data.upload_picture_list
-      //选择图片
+      if (upload_picture_list.length >= 1) {
+        wx.showModal({
+          title: '警告',
+          content: '只能上传一张图片哦！',
+        })
+        return
+      }
+      count = 1 - upload_picture_list.length
+      // 选择图片
       wx.chooseImage({
-        count: 3,
+        count: count,
         sizeType: ['compressed'],
         sourceType: ['album', 'camera'],
         success: function(res) {
@@ -83,67 +111,71 @@ Page({
             tempFiles[i]['upload_percent'] = 0
             tempFiles[i]['path_server'] = ''
             upload_picture_list.push(tempFiles[i])
-
           }
           //显示
           that.setData({
             upload_picture_list: upload_picture_list,
-          });
-
-        }
+          })
+        },
       })
     },
-    //点击上传事件
+    // 点击上传事件
     uploadimage: function() {
       var page = this
       var upload_picture_list = page.data.upload_picture_list
-      //循环把图片上传到服务器      
+      //循环把图片上传到服务器
       for (var j in upload_picture_list) {
-        // if (upload_picture_list[j]['upload_percent'] == 0) {
-        //   //调用函数
-        //   app.util.upload_file_server(app.api.up_pic, page, upload_picture_list, j)
-        // }
+        if (upload_picture_list[j]['upload_percent'] == 0) {
+          //调用函数
+          // app.util.upload_file_server(app.api.up_pic, page, upload_picture_list, j)
+        }
       }
     },
-
+    NoShangchuan: function(e) {
+      wx.showModal({
+        title: '温馨提示',
+        content: '只能上传一张图片哦~',
+      })
+    },
     // 删除图片
     deleteImg: function(e) {
-      let upload_picture_list = this.data.upload_picture_list;
-      let index = e.currentTarget.dataset.index;
-      upload_picture_list.splice(index, 1);
+      let upload_picture_list = this.data.upload_picture_list
+      let index = e.currentTarget.dataset.index
+      upload_picture_list.splice(index, 1)
       this.setData({
-        upload_picture_list: upload_picture_list
-      });
+        upload_picture_list: upload_picture_list,
+      })
     },
   }),
   function upload_file_server(url, that, upload_picture_list, j) {
     //上传返回值
     const upload_task = wx.uploadFile({
-
-      url: url,
-      filePath: upload_picture_list[j]['path'], //上传的文件本地地址    
+      url: '',
+      filePath: upload_picture_list[j]['path'], //上传的文件本地地址
       name: 'file',
       formData: {
-        'num': j
+        num: 5,
       },
-      //附近数据，这里为路径     
+      //附近数据，这里为路径
       success: function(res) {
-
-        var data = JSON.parse(res.data);
-        // //字符串转化为JSON  
+        var data = JSON.parse(res.data)
+        // //字符串转化为JSON
         if (data.Success == true) {
-
           var filename = data.file //存储地址 显示
-
           upload_picture_list[j]['path_server'] = filename
-
         } else {
           upload_picture_list[j]['path_server'] = filename
         }
         that.setData({
-          upload_picture_list: upload_picture_list
-        });
-        wx.setStorageSync('imgs', upload_picture_list);
-      }
+          upload_picture_list: upload_picture_list,
+        })
+        wx.setStorageSync('imgs', upload_picture_list)
+      },
+    })
+    upload_task.onProgressUpdate((res) => {
+      upload_picture_list[j]['upload_percent'] = res.progress
+      that.setData({
+        upload_picture_list: upload_picture_list,
+      })
     })
   }

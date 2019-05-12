@@ -231,8 +231,9 @@ Page({
   },
   // 页面渲染完成后 调用  
   onReady: function () {
-    var interval = setInterval(function () {
-      var totalSecond = '2018/02/21';
+    // var interval = setInterval(function () {//定时器
+    var interval = setTimeout(function(){
+      var totalSecond = '2019/08/08';
       var date1 = new Date(totalSecond);
       console.log(date1)
       var totalSecs = (new Date() - date1) / 1000;

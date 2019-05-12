@@ -1,116 +1,120 @@
 <form bindsubmit="fabu">
-<view>
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper-img'>
-    <block wx:for="{{imgUrls}}">
-      <swiper-item>
-        <image src="{{item}}" />
-      </swiper-item>
-    </block>
-  </swiper>
-</view>
-<!-- 设置轮播导航栏 -->
-<view class='Navigation-container'>
-  <view class="navbar">
-    <block wx:for="{{navbarTitle}}" wx:key="index">
-      <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
-        <text class='Navigation-text'>{{item}}</text>
-      </view>
-    </block>
+  <view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper-img'>
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" />
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
-  <view class="content-wrapper">
-    <swiper current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish" class="demo0415" bindchange="onTabSwitch">
-      <!-- 第一部分页面 -->
-      <swiper-item wx:if="navbarActiveIndex==0">
-        <scroll-view scroll-Y="{{true}}">
-          <block wx:for="{{Exhibition}}">
-            <view>
-              <view class="card-box">
-                <view class='dynamic-tupian'>
-                  <image class='dynamic_img' src='{{item.img_url}}' catchtap='onExhibitionTap'></image>
-                </view>
-                <text class='dynamic_title' maxlength="10" hidden='{{dleg3}}'>{{item.title}}</text>
-                <!-- 点赞 -->
-                <view class='discuss' bindtap='favorclick' data-id='{{item.id}}' data-islike="{{item.is_like}}" data-dex="{{index}}" data-userid="{{item.user_id}}">
-                  <image class='discuss-image' src='/images/icon/okZan.png' wx:if="{{item.is_like}}"></image>
-                  <image class='discuss-image' src='/images/icon/noZan.png' wx:else></image>
-                  <!-- <view class='zan_num'>{{item.like_num}}</view> -->
-                  <text class='discuss-text'>{{item.userDianzan}}</text>
-                  <image class='discuss-image' src='../../images/icon/pinglun.png' bindtap='pinlun'></image>
-                  <text class='discuss-text'>{{item.collection}}</text>
-                </view>
-                <view class="divLine"></view>
-                <view class='user'>
-                  <image class='userhead' src='{{item.userhead}}'></image>
-                  <view class='username'>{{item.author}}</view>
-                  <view class='userdate'>{{item.dayTime}}</view>
-                </view>
-              </view>
-            </view>
-          </block>
-        </scroll-view>
-      </swiper-item>
-
-      <!-- 第二部分页面 -->
-      <swiper-item wx:if="navbarActiveIndex === 1">
-        <scroll-view scroll-Y="{{true}}">
-          <block wx:for="{{Exhibition}}">
-            <view catchtap='onExhibitionTap'>
-              <view class="card-box">
-                <view class='dynamic-tupian'>
-                  <image class='dynamic_img' src='{{item.img_url}}'></image>
-                </view>
-                <text class='dynamic_title' maxlength="10" hidden='{{dleg3}}'>{{item.title}}</text>
-                <view class='discuss'>
-                  <image class='discuss-image' src='../../images/icon/noZan.png'></image>
-                  <text class='discuss-text'>{{item.userDianzan}}</text>
-                  <image class='discuss-image' src='../../images/icon/pinglun.png'></image>
-                  <text class='discuss-text'>{{item.collection}}</text>
-                </view>
-                <view class="divLine"></view>
-                <view class='user'>
-                  <image class='userhead' src='{{item.userhead}}'></image>
-                  <view class='username'>{{item.author}}</view>
-                  <view class='userdate'>{{item.dayTime}}</view>
-                  <!-- <view class='userdate'>4月26日</view> -->
-                </view>
-              </view>
-            </view>
-          </block>
-        </scroll-view>
-      </swiper-item>
-
-      <!-- 第三部分页面 -->
-      <swiper-item wx:if="navbarActiveIndex==2">
-        <!-- <scroll-view scroll-X="{{true}}"> -->
-
-        <!-- 添加图片点击事件 -->
-        <view class="add-image" bindtap='uploadpic'>
-          <image src='/images/icon/addimages.png' class='add_icon'></image>
+  <!-- 设置轮播导航栏 -->
+  <view class='Navigation-container'>
+    <view class="navbar">
+      <block wx:for="{{navbarTitle}}" wx:key="index">
+        <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
+          <text class='Navigation-text'>{{item}}</text>
         </view>
-        <!-- 本地选择图片添加 -->
-        <scroll-view class="scroll-view_H" scroll-X="{{true}}">
-          <view wx:for="{{upload_picture_list}}" class="picture_item">
+      </block>
+    </view>
+    <view class="content-wrapper">
+      <swiper current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish" class="demo0415" bindchange="onTabSwitch">
+        <!-- 第一部分页面 -->
+        <swiper-item wx:if="navbarActiveIndex==0">
+          <scroll-view scroll-Y="{{true}}">
+            <block wx:for="{{Exhibition}}">
+              <view>
+                <view class="card-box">
+                  <view class='dynamic-tupian'>
+                    <image class='dynamic_img' src='{{item.img_url}}' catchtap='onExhibitionTap'></image>
+                  </view>
+                  <text class='dynamic_title' maxlength="10" hidden='{{dleg3}}'>{{item.title}}</text>
+                  <!-- 点赞 -->
+                  <view class='discuss' bindtap='favorclick' data-id='{{item.id}}' data-islike="{{item.is_like}}" data-dex="{{index}}" data-userid="{{item.user_id}}">
+                    <image class='discuss-image' src='/images/icon/okZan.png' wx:if="{{item.is_like}}"></image>
+                    <image class='discuss-image' src='/images/icon/noZan.png' wx:else></image>
+                    <!-- <view class='zan_num'>{{item.like_num}}</view> -->
+                    <text class='discuss-text'>{{item.userDianzan}}</text>
+                    <!-- 评论 -->
+                    <image class='discuss-image' src='../../images/icon/pinglun.png' bindtap='pinlun'></image>
+                    <text class='discuss-text'>{{item.collection}}</text>
+                  </view>
+                  <view class="divLine"></view>
+                  <view class='user'>
+                    <!-- <image class='userhead' src='{{item.userhead}}'></image>
+                  <view class='username'>{{item.author}}</view> -->
+                    <!-- 获取用户的姓名和头像 -->
+                    <view class='imageName'>
+                      <image class="userhead" src='{{userInfo.avatarUrl}}'></image>
+                      <view class="username">{{userInfo.nickName}}</view>
+                    </view>
+                    <view class='userdate'>{{item.dayTime}}</view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+        </swiper-item>
+
+        <!-- 第二部分页面 -->
+        <swiper-item wx:if="navbarActiveIndex === 1">
+          <scroll-view scroll-Y="{{true}}">
+            <block wx:for="{{Exhibition}}">
+              <view catchtap='onExhibitionTap'>
+                <view class="card-box">
+                  <view class='dynamic-tupian'>
+                    <image class='dynamic_img' src='{{item.img_url}}'></image>
+                  </view>
+                  <text class='dynamic_title' maxlength="10" hidden='{{dleg3}}'>{{item.title}}</text>
+                  <view class='discuss'>
+                    <image class='discuss-image' src='../../images/icon/noZan.png'></image>
+                    <text class='discuss-text'>{{item.userDianzan}}</text>
+                    <image class='discuss-image' src='../../images/icon/pinglun.png'></image>
+                    <text class='discuss-text'>{{item.collection}}</text>
+                  </view>
+                  <view class="divLine"></view>
+                  <view class='user'>
+                    <view class='imageName'>
+                      <image class="userhead" src='{{userInfo.avatarUrl}}'></image>
+                      <view class="username">{{userInfo.nickName}}</view>
+                    </view>
+                    <!-- <image class='userhead' src='{{item.userhead}}'></image>
+                    <view class='username'>{{item.author}}</view> -->
+                    <view class='userdate'>{{item.dayTime}}</view>
+                    <!-- <view class='userdate'>4月26日</view> -->
+                  </view>
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+        </swiper-item>
+
+        <!-- 第三部分页面 -->
+        <swiper-item wx:if="navbarActiveIndex==2">
+          <!-- <scroll-view scroll-X="{{true}}"> -->
+
+          <!-- 添加图片点击事件 -->
+          <view class="add-image" bindtap='uploadpic'>
+            <image src='/images/icon/addimages.png' class='add_icon'></image>
+          </view>
+          <!-- 本地选择图片添加 -->
+          <!-- <scroll-view class="scroll-view_H" scroll-X="{{true}}"> -->
+          <view wx:for="{{upload_picture_list}}" class="picture_item" bindtap='NoShangchuan'>
             <image wx:if="{{item.upload_percent < 100}}" src="{{item.path}}"></image>
             <image wx:if="{{item.upload_percent == 100}}" src="{{item.path_server}}"></image>
             <image class='delete' src='/images/icon/delete.png' bindtap='deleteImg'></image>
           </view>
-          <!-- 上传一张图片 -->
-          <!-- <button bindtap="upimg" class='jia_img'>上传</button>
-          <image src="{{tempFilePaths[0]}}"></image> -->
-        </scroll-view>
-
-        <view class="divLine"></view>
-        <!-- 照片输入描述 -->
-        <view class='textContent'>
-          <textarea maxlength="5000" placeholder='说出照片背后的故事吧~' placeholder-class='placeholder'></textarea>
-        </view>
-
-         <view class='submit'>
-          <button form-type="submit" >发布</button>
-        
-        </view>
-      </swiper-item>
-    </swiper>
+          <!-- </scroll-view> -->
+          <view class="divLine"></view>
+          <!-- 照片输入描述 -->
+          <view class='textContent'>
+            <textarea maxlength="5000" placeholder='说出照片背后的故事吧~' placeholder-class='placeholder' name='content'></textarea>
+          </view>
+          <view class='submit'>
+            <button form-type="submit" class='fabu'>发布</button>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
   </view>
-</view>
 </form>

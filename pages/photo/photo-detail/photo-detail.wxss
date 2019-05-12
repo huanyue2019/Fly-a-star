@@ -1,3 +1,5 @@
+/* @import "/pages/photo/photo.wxss"; */
+
 .partone {
   margin-bottom: 10rpx;
   height: 520rpx;
@@ -17,8 +19,8 @@
 .back {
   position: relative;
   z-index: 2;
-  width: 40rpx;
-  height: 40rpx;
+  width: 30rpx;
+  height: 30rpx;
   margin-top: 77rpx;
   margin-left: 50rpx;
 }
@@ -61,7 +63,7 @@
   height: 50px;
   z-index: 1;
   /* margin:0  auto； */
-  margin-top: 10px;
+  margin-top: 8px;
   margin-bottom: 10px;
 }
 
@@ -74,14 +76,43 @@
 }
 
 .textContent {
-position: absolute;
+  position: absolute;
 }
 
-.textContent .text{
+.textContent .text {
   position: relative;
-   left: 50rpx;
+  left: 50rpx;
 }
 
 .placeholder {
   font-size: 28rpx;
+}
+
+.comment {
+  position: absolute;
+  bottom: 0rpx;
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: row;
+}
+
+.Commentinput {
+  position: relative;
+  border: 2rpx solid #69C3AA;
+  border-radius: 10rpx;
+  width: 620rpx;
+  height: 60rpx;
+  left: 10%;
+  bottom: 20rpx;
+}
+
+.inputplaceholder {
+  font-size: 30rpx;
+  left: 20rpx;
+  letter-spacing: 5rpx;
+}
+
+.discuss-image {
+  height: 20px;
+  width: 20px;
 }

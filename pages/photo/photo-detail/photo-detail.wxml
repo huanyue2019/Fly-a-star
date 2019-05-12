@@ -1,23 +1,19 @@
+
 <view class="container">
-  <!-- <navigator class='partone' url: '../photo'>
-    <image class='content-image' src='/images/post/classmate.jpg' style='border-top-right-radius:20rpx;'></image>
-    <image bindtap='onBackTap' class='back' src='/images/icon/ic_arrow_left2.png'></image>
-  </navigator> > -->
   <view class='partone'>
-      <image class='content-image' src='/images/post/classmate.jpg' style='border-top-right-radius:20rpx;'></image>
+      <image class='content-image' src='{{ContentImage}}' style='border-top-right-radius:20rpx;'></image>
+      <!-- 返回键 -->
     <image bindtap='onBackTap' class='back' src='/images/icon/ic_arrow_left2.png'></image>
   </view>
   <view class='content-container'>
-    <view style='font-size:38rpx;color:#333;'>拖延症为什么久治不愈?</view>
+    <view style='font-size:38rpx;color:#333;'>{{item.title}}</view>
     <view class='number'>
       <image src='/images/icon/read.png' style="width:60rpx;height:60rpx"></image>
-      <view style='margin-right:20rpx;'>333</view>
+      <view style='margin-right:20rpx;'>{{item.userLook}}</view>
       <image src='/images/icon/zan.png' style="width:60rpx;height:60rpx"></image>
-      <view>999</view>
-    </view>
+      <view>{{item.userDianzan}}</view>
+    </view> 
     <view class='content'>
-      <!-- <textarea class='content-text' style='height:auto' decode="{{true}}" space="{{true}}">理智的人看事太透，容易爱无能；感性的人活得太真，容易爱泛滥。理智的人脑子清楚，活得明白；感性的人热情洋溢，活得精彩。世上就这两种人，无论怎样排列组合，每段故事里只要有鲜花，必然有荆棘。所以大家是公平的，至少在受伤这件事上，谁都没跑。那么，最好的爱情是怎样的？有未来吧。一起对抗平庸，一起披荆斩棘，一起克服柴米油盐，一起面对生老病死。重点不是你们的故事如何被讲述，这跟口才有关；重点在于你们始终是“一起的”，直到最后。走散啦，就都没了。
-      </textarea> -->
       <textarea class='content-text' style='height:auto' decode="{{true}}" space="{{true}}">{{newData}}
       </textarea>
     </view>
@@ -26,6 +22,7 @@
     <image class='zan-image' src='/images/icon/zan-white.png'></image>
   </view> -->
   <view class='comment'>
-      
+      <input placeholder='友善的评论是良好交流的开始~' class='Commentinput' placeholder-class='inputplaceholder' bindtap='pinlun'></input>
+      <image class='discuss-image' src='/images/icon/pinglun.png' bindtap='pinlun'></image>
   </view>
 </view>

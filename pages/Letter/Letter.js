@@ -1,4 +1,5 @@
 // pages/Letter/Letter.js
+var App = getApp();
 Page({
 
   /**
@@ -6,16 +7,17 @@ Page({
    */
   data: {
     starTitle:'',
-    
+    starTime:''
   },
    dateChange:function(e){
      let value=e.detail.value;
      this.setData({date:value});
    },
   onTap:function(e){
-   
+    console.log(e)
+    var that = this;
     wx.navigateTo({
-      url: '../write-Letter/write-Letter?starTitle=' + e.detail.value.starTitle +'&&starTime'+this.data.date,
+      url: '../write-Letter/write-Letter?starTitle=' + e.detail.value.starTitle +'&&starTime='+this.data.date,
      
     })
   },

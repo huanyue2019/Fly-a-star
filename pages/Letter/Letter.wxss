@@ -30,8 +30,7 @@
   box-sizing: border-box;
 }
 
-
-.btn-Letter{
+/* .btn-Letter {
   border: 1px solid green;
   background-color: #73b69b;
   width: 150rpx;
@@ -42,16 +41,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.text-Letter{
+} */
+
+.text-Letter {
   font-family: MicroSoft Yahei;
   font-size: 32rpx;
   font-weight: 400;
   line-height: 100rpx;
 }
-.Deliver{
+
+.Deliver {
   margin-top: 80px;
   margin-left: 70%;
   margin-bottom: 0px;
 }
 
+.LetterSubmit {
+  background-color: #73b69b;
+  width: 150rpx;
+  height: 75rpx;
+  border: 1px solid #73b69b;
+  color: white;
+  vertical-align: middle;
+}

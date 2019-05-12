@@ -1,7 +1,10 @@
 // var APP = getApp();
 Page({
 	data: {
+    limit:'6',
 		list: '',
+    load:true,
+    loading:false,
 		upload_picture_list: [],
 		photos: '',
 		hiddenmodalput: true,
@@ -15,7 +18,7 @@ Page({
 		interval: 2000,
 		duration: 1000,
 		navbarActiveIndex: 1,
-		navbarTitle: ['首页推荐', '最新上传', '发布我的'],
+		navbarTitle: ['首页推荐', '最新星册', '添加星星'],
 		// lastid: 0,
 		Exhibition: [
 			{
@@ -46,9 +49,31 @@ Page({
 		currentNoteLen: 0,
 
 		tempFilePaths: [],
+    //用户个人信息
+    userInfo: {
+      avatarUrl: "",//用户头像
+      nickName: "",//用户昵称
+    }
 	},
 	onLoad: function(options) {
-		this.fetchData()
+		this.fetchData();
+    var that = this;
+    /**
+     * 获取用户信息
+     */
+    console.log(1)
+    wx.getUserInfo({
+      success: function (res) {
+        console.log(1)
+        console.log(res);
+        var avatarUrl = 'userInfo.avatarUrl';
+        var nickName = 'userInfo.nickName';
+        that.setData({
+          [avatarUrl]: res.userInfo.avatarUrl,
+          [nickName]: res.userInfo.nickName,
+        })
+      }
+    })
 	},
 	/**
 	 * 点赞评论
@@ -121,6 +146,48 @@ Page({
 		})
 	},
 
+  onReachBottom: function () {
+    var that = this;
+    if (that.data.load) {//全局标志位，方式请求未响应是多次触发
+      if (that.data.list.length < that.data.count) {
+        that.setData({
+          load: false,
+          loading: true,//加载动画的显示
+        })
+        wx.request({
+          url: 'https://www.hukehuke.vip/listloginDay',
+          data: {
+          },
+          method: 'POST',
+          header: {
+            'content-type': 'application/json',
+          },
+          success: function (res) {
+            console.log(res)
+            var content = that.data.list.concat(res.data.data.list)//将放回结果放入content
+            that.setData({
+              list: content,
+              page: that.data.page * 1 + 1,
+              load: true,
+              loading: false,
+            })
+          },
+          fail: function (res) {
+            that.setData({
+              loading: false,
+              load: true,
+            })
+            wx.showToast({
+              title: '数据异常',
+              icon: 'none',
+              duration: 2000,
+            })
+          },
+          complete: function (res) { },
+        })
+      }
+    }
+  },
 	// 请求后台数据
 	fetchData() {
 		var limit = 6
@@ -135,7 +202,7 @@ Page({
 				},
 				success: function(res) {
 					var newsList = res.data
-					console.log(newsList)
+					//console.log(newsList)
 					that.setData({
 						Exhibition: newsList,
 					})
@@ -158,7 +225,6 @@ Page({
 			//       })
 		}
 	},
-
 	fabu(event) {
 		var that = this
 		if (
@@ -177,7 +243,6 @@ Page({
 				header: {
 					'content-type': 'multipart/form-data',
 				},
-
 				success(res) {
 					// 判断发布是否成功
 					if (res.statusCode === 200) {
@@ -230,10 +295,27 @@ Page({
 		})
 	},
 
+	/**
+	 *  // 文章绑定详情id果
+	 */
 	onExhibitionTap: function(event) {
 		var postId = event.currentTarget.dataset.postid
+    wx.request({
+      url: 'https://www.baidu.com',
+      date: {
+        userId: wx.getStorageInfoSync('openid'),
+        // userYeMianId: that.data.img_urlID,
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+          
+      }
+    })
 		wx.navigateTo({
-			url: '/photo-detail/photo-detail',
+			url: '/pages/photo/photo-detail/photo-detail',
 		})
 	},
 	/**
@@ -334,7 +416,12 @@ Page({
 			}
 		}
 	},
-
+  NoShangchuan:function(e){
+    wx.showModal({
+      title: '温馨提示',
+      content: '只能上传一张图片哦~',
+    })
+  },
 	// 删除图片
 	deleteImg: function(e) {
 		let upload_picture_list = this.data.upload_picture_list
