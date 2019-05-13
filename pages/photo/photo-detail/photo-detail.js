@@ -13,7 +13,7 @@ Page({
     userLook:"",
     userDianzan:"",
   },
-  
+ 
   onBackTap: function(e) {
     // wx.redirectTo({
     //   url: 'https://www.hukehuke.vip/addDay',

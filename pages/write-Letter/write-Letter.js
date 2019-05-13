@@ -9,6 +9,8 @@ Page({
       noteMaxLen: 5000, //详细地址的字数限制
       currentNoteLen: 0,
       list: '',
+      starTime:"",
+      starTitle:"",
       upload_picture_list: []
 
       // img: [], //设置一个数组
@@ -16,6 +18,8 @@ Page({
 
    onLoad:function(options){
     console.log(options)
+     var starTime = options.starTime,
+    
     
    },
 
