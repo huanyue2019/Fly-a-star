@@ -60,10 +60,10 @@
         <swiper-item wx:if="navbarActiveIndex === 1">
           <scroll-view scroll-Y="{{true}}">
             <block wx:for="{{Exhibition}}">
-              <view catchtap='onExhibitionTap'>
+              <view>
                 <view class="card-box">
                   <view class='dynamic-tupian'>
-                    <image class='dynamic_img' src='{{item.img_url}}'></image>
+                    <image class='dynamic_img' src='{{item.img_url}}'  catchtap='onExhibitionTap'></image>
                   </view>
                   <text class='dynamic_title' maxlength="10" hidden='{{dleg3}}'>{{item.title}}</text>
                   <view class='discuss'>

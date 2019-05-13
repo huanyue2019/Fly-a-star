@@ -17,7 +17,7 @@ Page({
 		autoplay: true,
 		interval: 2000,
 		duration: 1000,
-		navbarActiveIndex: 1,
+		navbarActiveIndex: 0,
 		navbarTitle: ['首页推荐', '最新星册', '添加星星'],
 		// lastid: 0,
 		Exhibition: [

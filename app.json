@@ -1,7 +1,8 @@
 {
 	"pages": [
-		"pages/index/index",
 		"pages/photo/photo",
+		"pages/photo/CommentText/CommentText",
+		"pages/index/index",
 		"pages/photo/photo-detail/photo-detail",
 		"pages/star-Album/star-Album",
 		"pages/Letter/Letter",
@@ -12,7 +13,6 @@
 		"pages/personal/ContactUs/ContactUs",
 		"pages/personal/progress/progress",
 		"pages/shiyan/shiyan",
-		"pages/photo/CommentText/CommentText",
 		"pages/personal/MyTime/MyTime"
 	],
 	"window": {
