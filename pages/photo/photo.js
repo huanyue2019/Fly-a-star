@@ -61,10 +61,8 @@ Page({
     /**
      * 获取用户信息
      */
-    console.log(1)
     wx.getUserInfo({
       success: function (res) {
-        console.log(1)
         console.log(res);
         var avatarUrl = 'userInfo.avatarUrl';
         var nickName = 'userInfo.nickName';
@@ -102,11 +100,12 @@ Page({
 
 		wx.request({
 			// url: App.globalData.portConfig.HTTP_BASE_URL + 'https://www.baidu.com', //点赞接口
-			url: 'https://www.hukehuke.vip/addDianzan',
+			// url: 'https://www.hukehuke.vip/addDianzan'url,
+      url: 'http://192.168.31.37:8080/schoolLife/addDianzan',
 			// data: postzanData,
-			date: {
-				userId: wx.getStorageInfoSync('openid'),
-				userYeMianId: that.data.img_urlID,
+			data: {
+				"userId": wx.getStorageSync('openid'),
+				// "userYeMianId": ,
 			},
 			method: 'POST',
 			header: {
@@ -134,7 +133,7 @@ Page({
 				console.log('点赞成功', res)
 				let index = e.currentTarget.dataset.dex //获取当前点击的下标
 				let item = that.data.Exhibition
-				console.log(that.data.Exhibition)
+				// console.log(that.data.Exhibition)
 				item[index].is_like = true
 				that.setData({
 					Exhibition: item,
@@ -202,7 +201,6 @@ Page({
 				},
 				success: function(res) {
 					var newsList = res.data
-					//console.log(newsList)
 					that.setData({
 						Exhibition: newsList,
 					})
