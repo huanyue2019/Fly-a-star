@@ -44,7 +44,7 @@
 
       <view class='persional-introduce'>
         <image src='/images/icon/like.png' style='width:50rpx;height:50rpx;margin-top:8rpx;'></image>
-        <view style='margin-top:10rpx;margin-left:25rpx;font-size:36rpx;' bindtap='album'>我的相册</view>
+        <view style='margin-top:10rpx;margin-left:25rpx;font-size:36rpx;' bindtap='album'>我的追梦</view>
       </view>
       <view class="divLine"></view>
 

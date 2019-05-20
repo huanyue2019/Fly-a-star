@@ -18,7 +18,10 @@ Page({
 
    onLoad:function(options){
     console.log(options)
-     var starTime = options.starTime,
+     this.setData({
+       starTime: options.starTime,
+       starTitle: options.starTitle
+     })
     
     
    },
@@ -48,8 +51,8 @@ Page({
         name: 'file',
         formData: { 
           "starUser_id": wx.getStorageSync('openid'),
-          "starTitle": event.detail.value.starTitle,
-          "starTime": event.detail.value.starTime,
+          "starTitle": that.data.starTitle ,
+          "starTime": that.data.starTime ,
           "starContent": event.detail.value.starContent
         },
         header: {

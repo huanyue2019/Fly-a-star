@@ -100,8 +100,8 @@ Page({
 
 		wx.request({
 			// url: App.globalData.portConfig.HTTP_BASE_URL + 'https://www.baidu.com', //点赞接口
-			// url: 'https://www.hukehuke.vip/addDianzan'url,
-      url: 'http://192.168.31.37:8080/schoolLife/addDianzan',
+			url: 'https://www.hukehuke.vip/addDianzan',
+      // url: 'http://192.168.31.37:8080/schoolLife/addDianzan',
 			// data: postzanData,
 			data: {
 				"userId": wx.getStorageSync('openid'),
@@ -208,19 +208,21 @@ Page({
 				},
 			})
 		} else {
-			// wx.request({
-			//     url: 'https://www.hukehuke.vip/listloginDay',
-			//     method: 'POST',
-			//     header: {
-			//       'content-type': 'application/json',
-			//     },
-			//     success: function(res) {
-			//       var newsList = res.data;
-			//       console.log('--------------------')
-			//       console.log(newsList);
-			//       that.setData({
-			//         NewContent: newsList,
-			//       })
+			wx.request({
+			    url: 'https://www.hukehuke.vip/listDangtianDay',
+			    method: 'POST',
+			    header: {
+			      'content-type': 'application/json',
+			    },
+			    success: function(res) {
+			      var newsList = res.data;
+			      console.log('--------------------')
+			      console.log(newsList);
+			      that.setData({
+			        NewContent: newsList,
+			      })
+          }
+      })
 		}
 	},
 	fabu(event) {

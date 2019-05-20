@@ -1,8 +1,7 @@
-
-<view class="container">
+<view class="container" id='plYeMianId'>
   <view class='partone'>
-      <image class='content-image' src='{{ContentImage}}' style='border-top-right-radius:20rpx;'></image>
-      <!-- 返回键 -->
+    <image class='content-image' src='{{ContentImage}}' style='border-top-right-radius:20rpx;'></image>
+    <!-- 返回键 -->
     <image bindtap='onBackTap' class='back' src='/images/icon/ic_arrow_left2.png'></image>
   </view>
   <view class='content-container'>
@@ -12,7 +11,7 @@
       <view style='margin-right:20rpx;'>{{item.userLook}}</view>
       <image src='/images/icon/zan.png' style="width:60rpx;height:60rpx"></image>
       <view>{{item.userDianzan}}</view>
-    </view> 
+    </view>
     <view class='content'>
       <textarea class='content-text' style='height:auto' decode="{{true}}" space="{{true}}">{{newData}}
       </textarea>
@@ -21,8 +20,38 @@
   <!-- <view class='content-zan'>
     <image class='zan-image' src='/images/icon/zan-white.png'></image>
   </view> -->
-  <view class='comment'>
+  <!-- <view class='comment'>
       <input placeholder='友善的评论是良好交流的开始~' class='Commentinput' placeholder-class='inputplaceholder' bindtap='pinlun'></input>
       <image class='discuss-image' src='/images/icon/pinglun.png' bindtap='pinlun'></image>
+  </view> -->
+  <!-- 评论 -->
+  <!-- 表单 -->
+  <form bindsubmit="formSubmit">
+    <view class='comment'>
+      <input type="text" name="plContent" placeholder='输入评论内容' class="input-style" />
+      <button form-type='submit' class="btn" wx:if="{{nickName == empty}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" >评论</button>
+      <button form-Type='submit' class="btn" wx:else>评论</button>
+      <input type="text" name="pinglunname" value='{{nickName}}' style="display:none;" />
+      <input type="text" name="pinglunimg" value='{{avatarUrl}}' style="display:none;" />
+      <view style="position:relative;text-align:center;font-size:14px;color:#ccc;bottom:15px;">以下是评论内容</view>
+    </view>
+  </form>
+
+  <view wx:for="{{re}}" wx:key="re">
+    <view class="result">{{item.result}}</view>
+  </view>
+  <!-- <view style="text-align:center;font-size:14px;color:#ccc;margin-top:20px;">以下是评论内容</view> -->
+  <view wx:for="{{liuyanlist}}" wx:key="liuyanlist" class="liuyanview">
+    <view class="headimg">
+      <image src="{{item.headimg}}"></image>
+    </view>
+    <view class="nickname_liuyantext">
+      <view class="nickname">{{item.nickname}}
+        <view class="time">{{item.lytime}}</view>
+      </view>
+      <view class="text">{{item.liuyantext}}</view>
+    </view>
+    <!-- 占位符 -->
+    <view style="width:100%;height:10px;"></view>
   </view>
 </view>
