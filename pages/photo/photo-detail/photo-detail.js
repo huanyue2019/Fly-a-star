@@ -7,8 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    newData: "",
-    ContentImage: "/images/post/classmate.jpg",
+    content: "",
+    ContentImage: "",
     title: "",
     userLook: "",
     userDianzan: "",

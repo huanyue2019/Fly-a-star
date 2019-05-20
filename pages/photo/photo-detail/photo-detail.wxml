@@ -13,7 +13,7 @@
       <view>{{item.userDianzan}}</view>
     </view>
     <view class='content'>
-      <textarea class='content-text' style='height:auto' decode="{{true}}" space="{{true}}">{{newData}}
+      <textarea class='content-text' style='height:auto' decode="{{true}}" space="{{true}}">{{content}}
       </textarea>
     </view>
   </view>
@@ -49,7 +49,7 @@
       <view class="nickname">{{item.nickname}}
         <view class="time">{{item.lytime}}</view>
       </view>
-      <view class="text">{{item.liuyantext}}</view>
+      <!-- <view class="text">{{item.plContent}}</view> -->
     </view>
     <!-- 占位符 -->
     <view style="width:100%;height:10px;"></view>

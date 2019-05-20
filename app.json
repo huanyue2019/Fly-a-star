@@ -1,49 +1,50 @@
 {
-	"pages": [
-		"pages/photo/photo",
-		"pages/photo/CommentText/CommentText",
-		"pages/index/index",
-		"pages/photo/photo-detail/photo-detail",
-		"pages/star-Album/star-Album",
-		"pages/Letter/Letter",
-		"pages/write-Letter/write-Letter",
-		"pages/personal/personal",
-		"pages/shoucang/shoucang",
-		"pages/personal/MyAlbum/MyAlbum",
-		"pages/personal/ContactUs/ContactUs",
-		"pages/personal/progress/progress",
-		"pages/shiyan/shiyan",
-		"pages/personal/MyTime/MyTime"
-	],
-	"window": {
-		"backgroundTextStyle": "dark",
-		"navigationBarBackgroundColor": "#69C3AA",
-		"navigationBarTitleText": "放星我的梦",
-		"navigationBarTextStyle": "white"
-	},
-	"tabBar": {
-		"borderStyle": "white",
-		"position": "bottom",
-		"list": [
-			{
-				"pagePath": "pages/photo/photo",
-				"text": "青春轨迹",
-				"iconPath": "/images/icon/photo.png",
-				"selectedIconPath": "/images/icon/photo_click.png"
-			},
-			{
-				"pagePath": "pages/Letter/Letter",
-				"text": "星星期待",
-				"iconPath": "/images/icon/staricon.png",
-				"selectedIconPath": "/images/icon/staricon_click.png"
-			},
-			{
-				"pagePath": "pages/personal/personal",
-				"text": "个人中心",
-				"iconPath": "/images/icon/personal.png",
-				"selectedIconPath": "/images/icon/personal_click.png"
-			}
-		]
-	},
-	"sitemapLocation": "sitemap.json"
+  "pages": [
+    "pages/index/index",
+    "pages/photo/photo",
+    "pages/photo/CommentText/CommentText",
+    "pages/photo/photo-detail/photo-detail",
+    "pages/star-Album/star-Album",
+    "pages/Letter/Letter",
+    "pages/write-Letter/write-Letter",
+    "pages/personal/personal",
+    "pages/shoucang/shoucang",
+    "pages/personal/MyAlbum/MyAlbum",
+    "pages/personal/ContactUs/ContactUs",
+    "pages/personal/progress/progress",
+    "pages/shiyan/shiyan",
+    "pages/personal/MyTime/MyTime"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#69C3AA",
+    "navigationBarTitleText": "放星我的梦",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/photo/photo",
+        "text": "青春轨迹",
+        
+        "iconPath": "/images/icon/photo.png",
+        "selectedIconPath": "/images/icon/photo_click.png"
+      },
+      {
+        "pagePath": "pages/Letter/Letter",
+        "text": "星星期待",
+        "iconPath": "/images/icon/staricon.png",
+        "selectedIconPath": "/images/icon/staricon_click.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "iconPath": "/images/icon/personal.png",
+        "selectedIconPath": "/images/icon/personal_click.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }
