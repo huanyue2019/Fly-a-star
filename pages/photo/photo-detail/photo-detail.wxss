@@ -91,12 +91,11 @@
 .comment {
   position: absolute;
   bottom: 0rpx;
-  /* display: inline-block; */
-  display: flex;
-  flex-direction: row;
+  /* display: inline-block; *//* display: flex;
+  flex-direction: row; */
 }
 
-.Commentinput {
+/* .Commentinput {
   position: relative;
   border: 2rpx solid #69C3AA;
   border-radius: 10rpx;
@@ -110,9 +109,80 @@
   font-size: 30rpx;
   left: 20rpx;
   letter-spacing: 5rpx;
-}
+} */
 
-.discuss-image {
+/* .discuss-image {
   height: 20px;
   width: 20px;
+} */
+
+/**index.wxss**/
+
+.input-style {
+  /* width: 90%;
+  height: 50px;
+  border:1px solid #ccc;
+  margin:10px auto; */
+  position: relative;
+  border: 2rpx solid #69c3aa;
+  border-radius: 10rpx;
+  width: 620rpx;
+  height: 100rpx;
+  left: 10%;
+  bottom: 50px;
+}
+
+.btn {
+  width: 620rpx;
+  left: 10%;
+  bottom: 30px;
+  background-color: #69c3aa;
+  color: white;
+}
+
+.liuyanview {
+  width: 90%;
+  margin: 10px auto;
+  /* bottom: 10px; */
+}
+
+.result {
+  text-align: center;
+  font-size: 14px;
+  color: #f00;
+  top: 20px;
+}
+
+.headimg {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+}
+
+.headimg image {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+}
+
+.nickname_liuyantext {
+  width: calc(100% - 55px);
+  float: right;
+  margin-top: -45px;
+}
+
+.nickname_liuyantext .nickname {
+  font-size: 15px;
+  color: #999;
+}
+
+.nickname_liuyantext .nickname .time {
+  font-size: 11px;
+  color: #999;
+  float: right;
+}
+
+.nickname_liuyantext .text {
+  font-size: 16px;
+  color: #666;
 }

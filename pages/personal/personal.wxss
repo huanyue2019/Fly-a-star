@@ -41,7 +41,7 @@ page {
   top: -145rpx;
   font-size: 38rpx;
   height: 66rpx;
-  width: 76rpx;
+  width: auto;
 }
 
 .GeQian {

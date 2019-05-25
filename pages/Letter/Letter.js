@@ -18,7 +18,6 @@ Page({
     var that = this;
     wx.navigateTo({
       url: '../write-Letter/write-Letter?starTitle=' + e.detail.value.starTitle +'&&starTime='+this.data.date,
-     
     })
   },
   /**
