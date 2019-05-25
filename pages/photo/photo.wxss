@@ -1,261 +1,260 @@
 /* pages/photo/photo.wxss */
 
 .swiper-img {
-  width: 100%;
-  height: 400rpx;
-  margin-bottom: 20px;
+	width: 100%;
+	height: 400rpx;
+	margin-bottom: 20px;
 }
 
 .swiper-img image {
-  width: 100%;
-  height: 400rpx;
+	width: 100%;
+	height: 400rpx;
 }
 
 .Navigation-container {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .navbar {
-  display: flex;
-  z-index: 500;
-  width: 100%;
-  height: 50px;
-  flex-direction: row;
-  text-align: center;
-  color: #a8a8a8;
-  font-size: 10rpx;
-  box-sizing: border-box;
-  border-bottom: 1rpx solid #dfdfdf;
+	display: flex;
+	z-index: 500;
+	width: 100%;
+	height: 50px;
+	flex-direction: row;
+	text-align: center;
+	color: #a8a8a8;
+	font-size: 10rpx;
+	box-sizing: border-box;
+	border-bottom: 1rpx solid #dfdfdf;
 }
 
 .navbar-item {
-  flex: 1;
-  padding: 6rpx 2px;
+	flex: 1;
+	padding: 6rpx 2px;
 }
 
 .Navigation-text {
-  color: #666;
-  font-size: 36rpx;
-  margin-top: 30rpx;
+	color: #666;
+	font-size: 36rpx;
+	margin-top: 30rpx;
 }
 
 .navbar-item-active {
-  transition: all 0.1s;
-  border-bottom: 10rpx solid #fcc;
-  color: #494949;
+	transition: all 0.1s;
+	border-bottom: 10rpx solid #fcc;
+	color: #494949;
 }
 
 .demo0415 {
-  height: 1910rpx;
-  width: 100%;
-  /* border:1px solid green; */
+	width: 100%;
+	height: 1910rpx;
+	/* border:1px solid green; */
 }
-
+.card-list-box {
+	display: flex;
+	align-content: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
 /* 首页推荐 */
 .card-box {
-  /* padding: 5px 3rpx 5px 20px; *//* 上内边距是 5px,右内边距是 3rpx,下内边距是 5px,左内边距是 10px */
-  padding: 5px 0px 0px 5px;
-  width: 50%;
-  height: 480rpx;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  background-color: #fff;
-  box-sizing: border-box;
-  float: left;
-  /* 添加阴影 */
-  border-style: solid;
-  box-shadow: 0px 0px 5px 5px #f3f3f3;
-  border-width: 0rpx;
+	/* padding: 5px 3rpx 5px 20px; */ /* 上内边距是 5px,右内边距是 3rpx,下内边距是 5px,左内边距是 10px */
+	padding: 5px 0px 0px 5px;
+	width: 48%;
+	overflow: hidden;
+	height: 480rpx;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-direction: column;
+	background-color: #fff;
+	box-sizing: border-box;
+	/* float: left; */
+	/* 添加阴影 */
+	border-style: solid;
+	box-shadow: 0px 0px 5px 5px #f3f3f3;
+	border-width: 0rpx;
 }
 
 .dynamic-tupian {
-  width: 340rpx;
-  height: 240rpx;
-  display: flex;
+	width: 340rpx;
+	display: flex;
 }
 
 .dynamic_img {
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  margin-left: 30rpx;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	margin-left: 30rpx;
 }
 
 .dynamic_title {
-  font-size: 26rpx;
-  color: #666;
-  font-weight: 400;
-  margin-bottom: 2px;
-  margin-top: 5px;
-  margin-left: 50rpx;
+	font-size: 26rpx;
+	color: #666;
+	font-weight: 400;
+	margin-bottom: 2px;
+	margin-top: 5px;
+	margin-left: 50rpx;
 }
 
 .discuss {
-  display: flex;
-  flex-direction: row;
-  margin-top: 10rpx;
+	display: flex;
+	flex-direction: row;
+	margin-top: 10rpx;
 }
 
 .discuss-image {
-  height: 20px;
-  width: 20px;
-  margin-right: 8rpx;
-  margin-left: 40rpx;
+	height: 20px;
+	width: 20px;
+	margin-right: 8rpx;
+	margin-left: 40rpx;
 }
 
 .discuss-text {
-  margin-right: 15px;
-  color: #999;
+	margin-right: 15px;
+	color: #999;
 }
 
 .divLine {
-  background: rgb(201, 202, 199);
-  width: 100%;
-  height: 3rpx;
-  margin-top: 10rpx;
+	background: rgb(201, 202, 199);
+	width: 100%;
+	height: 3rpx;
+	margin: 10rpx 0;
 }
 
 .user {
-  z-index: 1000;
-  position: absolute;
-  /* display: inline-block; */
+	z-index: 1000;
+	position: absolute;
+	/* display: inline-block; */
 }
 
 .userhead {
-  border-radius: 50%;
-  width: 80rpx;
-  height: 80rpx;
-  position: relative;
-  left:35rpx;
-  top: 360rpx;
+	border-radius: 50%;
+	width: 80rpx;
+	height: 80rpx;
+	position: relative;
+	left: 35rpx;
+	top: 360rpx;
 }
 /* .imageName{
   display: inline-block;
   position: relative;
 } */
 .username {
-  top: 270rpx;
-  align-items: center;
-  font-size: 32rpx;
-  color: #494949;
-  position: relative;
-  left: 130rpx;
+	top: 270rpx;
+	align-items: center;
+	font-size: 32rpx;
+	color: #494949;
+	position: relative;
+	left: 130rpx;
 }
 
 .userdate {
-  top: 270rpx;
-  color: #999;
-  font-size: 28rpx;
-  position: relative;
-  /* right: 10rpx; */
-  left: 180rpx;
-  vertical-align: right;
+	top: 270rpx;
+	color: #999;
+	font-size: 28rpx;
+	position: relative;
+	/* right: 10rpx; */
+	left: 180rpx;
+	vertical-align: right;
 }
 
 /* 上传图片 */
 
 .add-image {
-  position: absolute;
-  z-index: 2;
-  left: 42%;
+	position: absolute;
+	z-index: 2;
+	left: 42%;
 }
 
 .add_icon {
-  width: 100rpx;
-  height: 80rpx;
-  margin-top: 20rpx;
+	width: 100rpx;
+	height: 80rpx;
+	margin-top: 20rpx;
 }
 
 .picture_item {
-  width: 240rpx;
-  height: 220rpx;
-  position: absolute;
-  z-index: 2;
-  left: 30%;
-  top: 10rpx;
-  bottom: 10rpx;
+	width: 240rpx;
+	height: 220rpx;
+	position: absolute;
+	z-index: 2;
+	left: 30%;
+	top: 10rpx;
+	bottom: 10rpx;
 }
 
 .picture_item image {
-  width: 320rpx;
-  height: 220rpx;
-  position: absolute;
-  z-index: -1;
+	width: 320rpx;
+	height: 220rpx;
+	position: absolute;
+	z-index: -1;
 }
 
 .picture_item .delete {
-  width: 40rpx;
-  height: 40rpx;
-  position: relative;
-  z-index: 2;
+	width: 40rpx;
+	height: 40rpx;
+	position: relative;
+	z-index: 2;
 }
 
 .scroll-view_H {
-  display: flex;
-  white-space: nowrap;
+	display: flex;
+	white-space: nowrap;
 }
 
 .scroll-view_H view {
-  border: 5rpx solid white;
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
+	border: 5rpx solid white;
+	display: inline-block;
+	justify-content: center;
+	align-items: center;
 }
 
 /* 输入照片描述部分 */
 
-.divLine {
-  background: rgb(201, 202, 199);
-  width: 100%;
-  height: 3rpx;
-  margin-top: 140rpx;
-  margin-bottom: 10px;
-}
-
 .placeholder {
-  font-size: 30rpx;
-  /* left: 20rpx; */
+	font-size: 30rpx;
+	/* left: 20rpx; */
 }
 
 .textContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 100rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 100rpx;
 }
 
 .textContent textarea {
-  border: 10rpx solid #fcc;
-  flex-wrap: warp;
-  border-radius: 10px;
-  font-size: 36rpx;
-  width: 700rpx;
-  height: 420rpx;
+	border: 10rpx solid #fcc;
+	flex-wrap: warp;
+	border-radius: 10px;
+	font-size: 36rpx;
+	width: 700rpx;
+	height: 420rpx;
 }
 
 /* 发布按钮 */
 
 .fabu {
-  background-color: green;
-  position: absolute;
-  /* display: flex;
+	background-color: green;
+	position: absolute;
+	/* display: flex;
   flex-direction:  */
-  width: 90%;
-  color: white;
-  bottom: 1000rpx;
-  left: 5%;
+	width: 90%;
+	color: white;
+	bottom: 1000rpx;
+	left: 5%;
 }
 
 .topImages {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
 
 .topImages image {
-  width: 340rpx;
-  height: 300rpx;
+	width: 340rpx;
+	height: 300rpx;
 }

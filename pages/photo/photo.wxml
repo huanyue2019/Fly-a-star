@@ -26,7 +26,7 @@
               <view>
                 <view class="card-box">
                   <view class='dynamic-tupian'>
-                    <image class='dynamic_img' src='{{item.img_url}}' catchtap='onExhibitionTap'></image>
+                    <image class='dynamic_img' mode="widthFix"  src='{{item.img_url}}' catchtap='onExhibitionTap'></image>
                   </view>
                   <text class='dynamic_title' maxlength="10" hidden='{{dleg3}}'>{{item.title}}</text>
                   <!-- 点赞 -->
@@ -60,7 +60,7 @@
         <swiper-item wx:if="navbarActiveIndex === 1">
           <scroll-view scroll-Y="{{true}}">
             <block wx:for="{{Exhibition}}">
-              <view>
+              <view class="card-list-box">
                 <view class="card-box">
                   <view class='dynamic-tupian'>
                     <image class='dynamic_img' src='{{item.img_url}}'  catchtap='onExhibitionTap'></image>
